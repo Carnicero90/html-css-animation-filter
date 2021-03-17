@@ -2,28 +2,24 @@
     width: 100px;
     height: 100px;
     border: 1px solid red;
-    transition: background-color 2s;
 }
 
 .ex-2-square {
     width: 100px;
     height: 100px;
     background: red;
-    transition: width ease-out 3s;
 }
 
 .ex-3-square {
     width: 100px;
     height: 100px;
     background: red;
-    transition: border-radius 1s;
 }
 
 .ex-4-square {
     width: 100px;
     height: 100px;
     background: red;
-    transition: all 1s;
 }
 
 .ex-5-square {
@@ -31,7 +27,6 @@
     width: 60px;
     height: 60px;
     background: red;
-    transition: all 1s;
 
 }
 
@@ -39,21 +34,15 @@
 .ex-7-img,
 .ex-8-img {
     width: 500px;
-    transition: all 1s;
 }
 
 .ex-9-img {
     margin: 50px 100px;
     width: 400px;
-    transition: all 2s;
 }
 
 .ex-10-icon {
     font-size: 60px;
-    animation-name: spin;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
 }
 
 .ex-11-icon {
@@ -81,8 +70,6 @@
     top: -10px;
     left: 10%;
     background: #f5f5f5;
-    /* background: red; */
-
     width: 60px;
     height: 20px;
 }
@@ -93,17 +80,44 @@
     bottom: -10px;
     right: 20%;
     background: #f5f5f5;
-    /* background: red; */
     width: 60px;
     height: 20px;
 }
 
+/* ===== ESERCIZI ===== */
+
+/* transition-time
+   ===============  */
+.ex-3-square,
+.ex-4-square,
+.ex-5-square,
+.ex-7-img,
+.ex-8-img {
+    transition: all 1s;
+}
+
+.ex-2-square,
+.ex-9-img {
+    transition: all 3s;
+}
+
+.ex-1-square {
+    transition: all 2s;
+}
+
+/* =============== */
+
 /* ex-1 */
+
 .ex-1-square:hover {
     background-color: red;
 }
 
 /* ex-2 */
+.ex-2-square {
+    transition-timing-function: ease-out;
+}
+
 .ex-2-square:active {
     width: 100%;
 }
@@ -150,10 +164,16 @@
     filter: grayscale(0.8);
     border-radius: 25px;
     transform: scale(1.5);
-
 }
 
 /* ex-10 */
+.ex-10-icon {
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
 @keyframes spin {
     100% {
         transform: rotate(-360deg);
@@ -173,27 +193,28 @@
     }
 }
 
-/* COMMON ex-12 ex-13 */
-
+/* COMMON ex-12 ex-13
+   ================== */
 [class^="ex-"][class$="-button"] [class$="-white"] {
     animation-duration: 2s;
     animation-timing-function: linear;
 }
 
-/* ex-12 */
+/* ================== */
 
+/* ex-12 */
 .ex-12-button:hover .ex-12-top-white {
     animation-name: top-slider;
-}
-
-.ex-12-button:hover .ex-12-bottom-white {
-    animation-name: bottom-slider;
 }
 
 @keyframes top-slider {
     50% {
         left: calc(100% - 65px);
     }
+}
+
+.ex-12-button:hover .ex-12-bottom-white {
+    animation-name: bottom-slider;
 }
 
 @keyframes bottom-slider {
@@ -203,14 +224,9 @@
 }
 
 /* ex-13 */
-
 .ex-13-button:hover .ex-13-top-white {
     animation-name: top-spin;
 
-}
-
-.ex-13-button:hover .ex-13-bottom-white {
-    animation-name: bottom-spin;
 }
 
 @keyframes top-spin {
@@ -235,6 +251,9 @@
     }
 }
 
+.ex-13-button:hover .ex-13-bottom-white {
+    animation-name: bottom-spin;
+}
 
 @keyframes bottom-spin {
     29.6% {
